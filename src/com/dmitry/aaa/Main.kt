@@ -1,5 +1,11 @@
 package com.dmitry.aaa
 
 fun main(args: Array<String>) {
-    println("Hi!")
+    if (args.isEmpty()) {
+        println("No Args!!!")
+    } else {
+        for (arg in args) {
+            println(arg)
+        }
+    }
 }

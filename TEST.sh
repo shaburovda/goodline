@@ -35,5 +35,4 @@ if [ $COUNT_ALL -eq $COUNT_SUC ]; then
 else
     echo $COUNT_SUC success tests out of $COUNT_ALL
     exit 1
-
 fi

@@ -2,19 +2,17 @@ package com.dmitry.aaa
 
 fun main(args: Array<String>) {
 
-    val status: Int
-
-    when {
-        args.isEmpty() -> {
-            println("No Args!!!!!")
-            status = 0
-        }
-        args.size == 1 -> status = 1
-        args.size == 2 -> status = 2
-        else -> {
-            args.forEach { println(it) }
-            status = 3
-        }
+    val status = when (args.size) {
+        0 -> getStatus(0, { println("No args!!!") })
+        1 -> getStatus(1, {})
+        2 -> getStatus(2, {})
+        else -> getStatus(100, { args.forEach { println(it) } })
     }
+
     System.exit(status)
+}
+
+fun getStatus(status: Int, callback: () -> Unit): Int {
+    callback()
+    return status
 }
